@@ -83,24 +83,26 @@ export default function Home() {
 
           <div className="w-1/2 flex flex-col justify-center">
             <div className="flex flex-col justify-center">
-            <p className="text-white text-sm mb-2 font-bold">
-            • One of my projects <span className="font-light">(Playing video {currentVideoIndex + 1}/{videoUrls.length})</span>
-          </p>
-          <iframe
-            className="rounded-lg border-gray-400 border-5"
-            width={900}
-            height={450}
-            src={videoUrls[currentVideoIndex]}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-          <div className="flex mt-4 items-center">
-            <Button className="mr-4" onClick={handleNextVideo}>Play Next Video →</Button>
-            <Button onClick={handlePreviousVideo}>← Go Back</Button>
-          </div>
+              <p className="text-white text-sm mb-2 font-bold">
+                • One of my projects <span className="font-light">(Playing video {currentVideoIndex + 1}/{videoUrls.length})</span>
+              </p>
+              <div className="w-full flex justify-center">
+                <div className="relative w-full pb-[50.25%] h-0">
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full rounded-lg  border-t-3 border-r-2 border-l-2 border-b-2 shadow-lg border-white border-opacity-75 "
+                    src={videoUrls[currentVideoIndex]}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+              <div className="flex mt-4 items-center">
+                <Button className="mr-4" onClick={handleNextVideo}>Play Next Video →</Button>
+                <Button onClick={handlePreviousVideo}>← Go Back</Button>
+              </div>
               {/* or you can use an Image component if you want to display an image */}
               {/* <Image src="/image.jpg" alt="Image" width={500} height={300} /> */}
             </div>
@@ -109,11 +111,10 @@ export default function Home() {
       </div>
 
       <div className="flex justify-center w-full mb-4">
-  <div className="flex flex-wrap justify-center w-full">
-    {/* Other components go here */}
-    
-  </div>
-</div>
+        <div className="flex flex-wrap justify-center w-full">
+          {/* Other components go here */}
+        </div>
+      </div>
 
 
 <div className="grid grid-rows-1 grid-flow-col w-full mb-6">
